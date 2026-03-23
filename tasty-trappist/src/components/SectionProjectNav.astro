@@ -1,0 +1,166 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+/**
+ * Shared sidebar + mobile hamburger drawer for product-design and technical-leadership sections.
+ * Uses a checkbox (no JS) to toggle the mobile drawer.
+ */
+interface ProjectLink {
+	id: string;
+	slug: string;
+	title: string;
+}
+
+interface Props {
+	sectionLabel: string;
+	basePath: string;
+	currentSlug: string | null;
+	projects: readonly ProjectLink[];
+	/** Unique id for the menu checkbox (must be unique per page if multiple navs ever coexist). */
+	menuId: string;
+}
+
+const { sectionLabel, basePath, currentSlug, projects, menuId } = Astro.props;
+const contentsPath = basePath;
+
+const linkBase =
+	'flex items-baseline gap-2 rounded-md px-2 py-2 text-left text-sm transition-colors duration-200';
+const linkIdle =
+	'text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50';
+const linkActive =
+	'bg-zinc-900 text-white hover:bg-zinc-800 hover:text-white dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:hover:text-zinc-900';
+---
+
+<div
+	data-section-nav
+	class="md:sticky md:top-0 md:flex md:min-h-dvh md:w-64 md:shrink-0 md:flex-col md:self-stretch lg:w-72"
+>
+	<input type="checkbox" id={menuId} class="peer sr-only" />
+
+	<!-- Mobile: section title + hamburger -->
+	<div
+		class="sticky top-0 z-30 flex items-center justify-between border-b border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-950 md:hidden"
+	>
+		<span
+			class="min-w-0 flex-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400"
+		>
+			{sectionLabel}
+		</span>
+		<div class="flex shrink-0 items-center gap-1">
+			<div class="md:hidden">
+				<ThemeToggle variant="toolbar" />
+			</div>
+			<label
+				for={menuId}
+				class="cursor-pointer rounded-lg p-2 text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+				aria-label="Open menu"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="size-6"
+					aria-hidden="true"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+				</svg>
+			</label>
+		</div>
+	</div>
+
+	<!-- Mobile: backdrop (tap to close) -->
+	<label
+		for={menuId}
+		class="pointer-events-none fixed inset-0 z-40 bg-zinc-900/40 opacity-0 transition-opacity duration-200 peer-checked:pointer-events-auto peer-checked:opacity-100 dark:bg-black/60 md:hidden"
+		aria-hidden="true"></label>
+
+	<!-- Drawer (mobile) / sidebar (desktop) -->
+	<aside
+		class="fixed inset-y-0 right-0 z-50 flex max-h-dvh w-[min(100vw-1rem,20rem)] translate-x-full flex-col border-l border-zinc-200 bg-white shadow-2xl transition-transform duration-200 ease-out peer-checked:translate-x-0 dark:border-zinc-800 dark:bg-zinc-950 md:relative md:inset-auto md:z-auto md:h-full md:max-h-none md:min-h-0 md:w-full md:flex-1 md:translate-x-0 md:border-l-0 md:border-r md:border-zinc-200 md:bg-zinc-50/90 md:shadow-none md:transition-none dark:md:border-zinc-800 dark:md:bg-zinc-900/90"
+		aria-label={`${sectionLabel} navigation`}
+	>
+		<div
+			class="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800 md:hidden"
+		>
+			<span class="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Menu</span>
+			<label
+				for={menuId}
+				class="cursor-pointer rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+				aria-label="Close menu"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="size-6"
+					aria-hidden="true"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+				</svg>
+			</label>
+		</div>
+
+		<div
+			class="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 py-5 md:py-8 md:pl-4 md:pr-3"
+		>
+			<a
+				href="/"
+				class="mb-4 hidden text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 md:block"
+			>
+				← Home
+			</a>
+			<a
+				href="/"
+				class="mb-3 block rounded-md px-2 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 md:hidden"
+			>
+				Home
+			</a>
+			<a
+				href={contentsPath}
+				class:list={[
+					linkBase,
+					'-ml-2 mb-2 font-medium md:font-medium',
+					currentSlug === null ? linkActive : linkIdle,
+				]}
+			>
+				Contents
+			</a>
+			<p
+				class="mb-2 mt-4 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-zinc-400 dark:text-zinc-500"
+			>
+				Projects
+			</p>
+			<ul class="m-0 list-none space-y-0.5 p-0">
+				{
+					projects.map((p) => (
+						<li>
+							<a
+								href={`${basePath}/${p.slug}`}
+								class:list={[linkBase, currentSlug === p.slug ? linkActive : linkIdle]}
+							>
+								<span
+									class:list={[
+										'w-8 shrink-0 tabular-nums text-[0.7rem]',
+										currentSlug === p.slug
+											? 'text-white/90 dark:text-zinc-900/90'
+											: 'opacity-80',
+									]}
+								>
+									{p.id}
+								</span>
+								<span class="min-w-0 wrap-break-word leading-snug">{p.title}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</aside>
+</div>

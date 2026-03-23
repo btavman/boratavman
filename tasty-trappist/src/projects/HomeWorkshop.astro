@@ -1,0 +1,82 @@
+---
+import photoPlaceholder from '../assets/home-workshop/placeholder.svg';
+import homeWorkshop from '../assets/home-workshop/home.jpg';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 text-right ${eyebrow}`}>1.4 Home workshop</p>
+		</div>
+	</header>
+
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-10 sm:pt-16 sm:pb-12">
+		<p class={`m-0 ${eyebrow}`}>1.4 Home workshop</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+			Home Workshop
+		</h1>
+		<hr class="mt-6 max-w-2xl border-0 border-t border-zinc-200 dark:border-zinc-800" />
+	</section>
+
+	<section class="mx-auto max-w-6xl px-6 pb-20 sm:pb-24">
+		<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+			<div>
+				<p class={`m-0 ${eyebrow}`}>Project brief</p>
+				<div class="mt-5 space-y-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+					<p>
+						As a maker living in a small downtown condo, I struggled to find enough space for a
+						functional workshop. As a renter, I also wanted to avoid drilling into walls.
+					</p>
+					<p>
+						My original plan was to build a desk from aluminum extrusion, but I couldn’t afford
+						that. Instead, I worked with what I had. I secured 2×4 lumber to my existing IKEA Alex
+						desk and used those as the structural backbone for a shelving system.
+					</p>
+				</div>
+			</div>
+
+			<figure
+				class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm lg:sticky lg:top-6"
+			>
+				<img
+					src={homeWorkshop.src}
+					width={900}
+					height={1200}
+					alt="Desk setup: IKEA Alex with 2×4 uprights, white shelves with organizers and toolbox, dual monitors and laptop on the desktop, PC tower below"
+					class="aspect-3/4 h-auto w-full object-cover sm:aspect-4/5 lg:aspect-3/4"
+					loading="eager"
+					decoding="async"
+				/>
+				<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+					Finished workshop wall — no holes in the rental, lumber tied into furniture I already owned.
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Home workshop</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

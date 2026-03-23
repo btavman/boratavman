@@ -1,0 +1,98 @@
+---
+import photoPlaceholder from '../assets/pipe-lights/placeholder.svg';
+import diagramPlaceholder from '../assets/monitor-stand/placeholder.svg';
+import pipeLights from '../assets/pipe-lights/pipe_lights.jpg';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 ${eyebrow}`}>1.2 Pipe lights</p>
+		</div>
+	</header>
+
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-10 sm:pt-16 sm:pb-14">
+		<p class={`m-0 ${eyebrow}`}>1.2 Pipe lights</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+			Pipe Lights
+		</h1>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+	</section>
+
+	<section class="mx-auto max-w-6xl px-6 pb-20 sm:pb-24">
+		<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-10">
+			<figure
+				class="m-0 lg:col-span-4 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+			>
+				<img
+					src={pipeLights.src}
+					width={900}
+					height={1200}
+					alt="Pipe light in a room: PVC WYE and elbow fittings with purple accent lighting; hand adjusting the rotating elbow"
+					class="aspect-[3/4] h-auto w-full object-cover sm:aspect-[4/5] lg:aspect-[3/4]"
+					loading="eager"
+					decoding="async"
+				/>
+			</figure>
+
+			<div class="space-y-6 text-base leading-relaxed text-zinc-700 dark:text-zinc-300 lg:col-span-4">
+				<p>
+					I love having objects that symbolize different chapters of my life. For me, work isn’t
+					something to avoid; it’s an opportunity to express who I am.
+				</p>
+				<p>
+					When our office was preparing to move, we planned to dispose of several sample items. I asked
+					my manager if I could keep two 8-inch fittings, and he agreed.
+				</p>
+				<p>
+					So, I designed this light: an art piece that I can display in my apartment. The elbow is
+					connected to the WYE with a lazy Susan. The direction of the light can be adjusted with a
+					single finger.
+				</p>
+			</div>
+
+			<figure
+				class="m-0 lg:col-span-4 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+			>
+				<img
+					src={diagramPlaceholder.src}
+					width={1200}
+					height={800}
+					alt="Exploded 3D view: diffusers, lamp and reflector in elbow, lazy Susan bearing between elbow and WYE base, side outlet lighting stack"
+					class="h-auto w-full object-contain p-4 sm:p-6"
+					loading="lazy"
+					decoding="async"
+				/>
+				<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+					Exploded assembly — diffusers, fittings, lazy Susan, and dual light paths.
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Pipe lights</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

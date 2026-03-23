@@ -1,0 +1,67 @@
+---
+import { technicalLeadershipProjects as entries } from '../data/technical-leadership';
+
+const shell =
+	"box-border flex min-h-dvh flex-col bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-black dark:text-zinc-50 **:box-border";
+const pageX = "px-[clamp(1.25rem,5vw,3.5rem)]";
+const pageY = "py-[clamp(1.25rem,4vw,2.5rem)]";
+---
+
+<div class={shell}>
+	<header
+		class="border-b border-zinc-300 bg-white/90 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-950/90 md:border-b-0"
+	>
+		<div class={`flex justify-end py-4 ${pageX}`}>
+			<p
+				class="m-0 text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500"
+			>
+				Technical leadership
+			</p>
+		</div>
+	</header>
+
+	<div class:list={['flex-1', pageX, pageY]}>
+		<header>
+			<h1
+				class="m-0 text-[clamp(2rem,5vw,2.75rem)] font-bold leading-tight tracking-tight text-black dark:text-zinc-50"
+			>
+				Contents
+			</h1>
+			<hr class="mb-0 mt-6 h-px w-full border-0 bg-zinc-300 dark:bg-zinc-600" />
+		</header>
+
+		<ul class="mt-12 list-none space-y-0 p-0">
+			{
+				entries.map((item) => (
+					<li class="border-b border-zinc-300 py-10 first:pt-0 last:border-b-0 dark:border-zinc-700">
+						<article
+							class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_1fr] sm:gap-x-6 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-x-8"
+						>
+							<span class="text-sm font-normal tabular-nums text-zinc-400 dark:text-zinc-500 sm:pt-0.5">
+								{item.id}
+							</span>
+							<div class="min-w-0">
+								<a
+									href={`/technical-leadership/${item.slug}`}
+									class="text-inherit no-underline transition-opacity duration-250 ease-in-out hover:opacity-80"
+								>
+									<h2 class="m-0 text-base font-bold leading-snug text-black dark:text-zinc-50">
+										{item.title}
+									</h2>
+								</a>
+								<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+									{item.subtitle}
+								</p>
+							</div>
+							<p
+								class="mb-0 text-xs leading-relaxed text-zinc-400 dark:text-zinc-500 sm:col-span-2 lg:col-span-1 lg:max-w-56 lg:justify-self-end lg:self-start lg:text-right"
+							>
+								{item.tags}
+							</p>
+						</article>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>

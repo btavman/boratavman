@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-label="Placeholder">
+  <rect width="900" height="1200" fill="#fafafa"/>
+  <rect x="40" y="40" width="820" height="1120" fill="#f4f4f5" rx="6"/>
+  <text x="450" y="600" text-anchor="middle" fill="#a1a1aa" font-family="system-ui,sans-serif" font-size="20">Pipe Lights  add photo / render</text>
+</svg>

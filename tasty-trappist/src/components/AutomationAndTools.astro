@@ -1,0 +1,320 @@
+---
+import drawingPh from '../assets/automation/placeholder.svg';
+import dc from '../assets/automation/dc.jpg';
+import dd from '../assets/automation/dd.jpg';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const sectionEyebrow = 'text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-zinc-400 dark:text-zinc-500';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<a
+				href="/"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Home
+			</a>
+			<p class={`m-0 text-right ${eyebrow}`}>Automation &amp; tools</p>
+		</div>
+	</header>
+
+	<!-- IPEX overview -->
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-16 sm:pt-16 sm:pb-20">
+		<p class={`m-0 ${eyebrow}`}>Automation &amp; tools</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+			IPEX automation impact
+		</h1>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-10 space-y-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+			<p>
+				Upon joining IPEX, I identified that a significant amount of data entry was being performed
+				manually. I developed a plan to automate these tasks and presented it to management. I learned
+				Excel and SolidWorks VBA for this role and implemented tools that eliminated repetitive work for
+				four engineers.
+			</p>
+			<p>
+				Below, I walk through the problem context and how I solved it across several workflows.
+			</p>
+		</div>
+
+		<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+			<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-6 py-8 text-center shadow-sm">
+				<p class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">117</p>
+				<p class="mb-0 mt-2 text-sm text-zinc-500 dark:text-zinc-400">Hours saved annually</p>
+			</div>
+			<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-6 py-8 text-center shadow-sm">
+				<p class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">$5,850</p>
+				<p class="mb-0 mt-2 text-sm text-zinc-500 dark:text-zinc-400">Annual value generated</p>
+			</div>
+			<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-6 py-8 text-center shadow-sm">
+				<p class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">4</p>
+				<p class="mb-0 mt-2 text-sm text-zinc-500 dark:text-zinc-400">Engineers enabled</p>
+			</div>
+		</div>
+		<p class="mt-8 text-xs text-zinc-400 dark:text-zinc-500">
+			IPEX · 2023–2025 · Based on $50/hr engineering rate (117 h × $50 ≈ $5,850).
+		</p>
+	</section>
+
+	<!-- Dimension workflow narrative + drawings -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<h2 class="m-0 text-2xl font-bold tracking-tight sm:text-3xl">
+				Master dimension sheet — problem and pivot
+			</h2>
+			<hr class="mt-5 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+				<div class="space-y-6 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+					<div>
+						<p class={`m-0 ${sectionEyebrow}`}>The problem</p>
+						<p class="mb-0 mt-3">
+							Every part we created required specific callouts and dimensions to be registered into a
+							master dimension sheet. This was a tedious, manual process.
+						</p>
+					</div>
+					<div>
+						<p class={`m-0 ${sectionEyebrow}`}>The initial attempt</p>
+						<p class="mb-0 mt-3">
+							My initial solution was a Python script designed to map callout locations to dimensions
+							and export them to Excel. While the code worked, our IT department restricted the
+							installation of the necessary libraries.
+						</p>
+					</div>
+					<div>
+						<p class={`m-0 ${sectionEyebrow}`}>The final solution</p>
+						<p class="mb-0 mt-3">
+							Instead of giving up, I pivoted. I taught myself SolidWorks VBA macros to achieve the
+							same result inside the company’s existing software stack, so the project succeeded
+							without compromising IT security.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 gap-6">
+					<figure
+						class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3 shadow-sm sm:p-4"
+					>
+						<img
+							src={dd.src}
+							width={1200}
+							height={800}
+							alt="Drawing with numeric dimensions for a circular plate and section views"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="mt-3 text-center text-xs text-zinc-500 dark:text-zinc-400">
+							Numeric dimensions on the sheet.
+						</figcaption>
+					</figure>
+					<figure
+						class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3 shadow-sm sm:p-4"
+					>
+						<img
+							src={dc.src}
+							width={1200}
+							height={800}
+							alt="Same views with parametric labels replacing hard-coded dimension values"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="mt-3 text-center text-xs text-zinc-500 dark:text-zinc-400">
+							Same geometry driven by parametric variables for automation.
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.1 Master Product Sheet Upload -->
+	<section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+		<p class={`m-0 ${eyebrow}`}>2.1 Master product sheet upload</p>
+		<h2 class="m-0 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+			Master product sheet upload
+		</h2>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+			<div class="space-y-10 lg:col-span-3">
+				<div>
+					<p class={`m-0 ${sectionEyebrow}`}>The problem</p>
+					<div class="mt-4 space-y-3 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						<p>
+							The engineering team manually entered part creation dates and drawing dates into an Excel
+							sheet for every new part designed.
+						</p>
+						<p>
+							The process was tedious, error-prone, and consumed engineering time that could have gone
+							to design work.
+						</p>
+					</div>
+				</div>
+				<div>
+					<p class={`m-0 ${sectionEyebrow}`}>The solution</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						Developed an Excel VBA macro that automates the entire data-entry flow. Single-click
+						automation replaces manual entry.
+					</p>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-4 lg:col-span-2">
+				<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-6 py-8 text-center shadow-sm">
+					<p class="m-0 text-2xl font-bold tracking-tight sm:text-3xl">1 min → 5 sec</p>
+					<p class="mb-0 mt-2 text-sm text-zinc-500 dark:text-zinc-400">Per-part time reduction</p>
+				</div>
+				<div class="grid grid-cols-2 gap-4">
+					<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-4 py-7 text-center shadow-sm">
+						<p class="m-0 text-2xl font-bold">45</p>
+						<p class="mb-0 mt-2 text-xs text-zinc-500 dark:text-zinc-400">Parts / week</p>
+					</div>
+					<div class="rounded-2xl bg-zinc-100 dark:bg-zinc-800/70 px-4 py-7 text-center shadow-sm">
+						<p class="m-0 text-2xl font-bold">4</p>
+						<p class="mb-0 mt-2 text-xs text-zinc-500 dark:text-zinc-400">Users</p>
+					</div>
+				</div>
+				<div
+					class="rounded-2xl border border-emerald-200/80 bg-emerald-50/90 px-6 py-8 text-center shadow-sm"
+				>
+					<p class="m-0 text-xl font-bold tracking-tight sm:text-2xl">39 hours saved / year</p>
+					<p class="mb-0 mt-2 text-sm text-zinc-600 dark:text-zinc-400">Eliminated data-entry errors</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.2 Master Dimension Sheet Upload -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>2.2 Master dimension sheet upload</p>
+			<h2 class="m-0 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+				Master dimension sheet upload
+			</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+				<div class="space-y-10 lg:col-span-3">
+					<div>
+						<p class={`m-0 ${sectionEyebrow}`}>The challenge</p>
+						<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+							Engineers manually transferred dimensional data (L, W, H, etc.) from SolidWorks to a
+							master sheet — one dimension at a time, averaging seven dimensions per part. The
+							process took about two minutes per part and was highly error-prone.
+						</p>
+					</div>
+					<div>
+						<p class={`m-0 ${sectionEyebrow}`}>Dual-system integration</p>
+						<div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+							<div>
+								<p class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">01 · SolidWorks VBA</p>
+								<p class="mb-0 mt-2 text-sm leading-snug text-zinc-500 dark:text-zinc-400">
+									Extracts dimensional data automatically.
+								</p>
+							</div>
+							<div>
+								<p class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">02 · Excel aggregator</p>
+								<p class="mb-0 mt-2 text-sm leading-snug text-zinc-500 dark:text-zinc-400">
+									Merges individual part files.
+								</p>
+							</div>
+							<div>
+								<p class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">03 · Auto-upload</p>
+								<p class="mb-0 mt-2 text-sm leading-snug text-zinc-500 dark:text-zinc-400">
+									Transfers to the master sheet seamlessly.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex flex-col gap-4 lg:col-span-2">
+					<div class="rounded-2xl bg-zinc-200/60 dark:bg-zinc-800/50 px-6 py-8 text-center shadow-sm">
+						<p class="m-0 text-xl font-bold tracking-tight sm:text-2xl">2 min → 30 sec</p>
+						<p class="mb-0 mt-2 text-sm text-zinc-600 dark:text-zinc-400">Processing time per part</p>
+					</div>
+					<div
+						class="rounded-2xl border border-emerald-200/60 bg-emerald-50/90 px-6 py-8 text-center shadow-sm"
+					>
+						<p class="m-0 text-xl font-bold tracking-tight sm:text-2xl">78 hours / year</p>
+						<p class="mb-0 mt-2 text-sm text-zinc-600 dark:text-zinc-400">Team-wide time savings</p>
+					</div>
+					<div
+						class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-6 py-8 text-center shadow-sm"
+					>
+						<p class="m-0 text-base font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+							Critical manufacturing accuracy
+						</p>
+						<p class="mb-0 mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+							Eliminated dimensional errors · four engineers using daily
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.3 Additional -->
+	<section class="mx-auto max-w-6xl px-6 py-16 sm:pb-24 sm:pt-20">
+		<p class={`m-0 ${eyebrow}`}>2.3 Additional process improvements</p>
+		<h2 class="m-0 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+			Additional projects &amp; support
+		</h2>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+			<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm sm:p-7">
+				<h3 class="m-0 text-lg font-bold text-zinc-900 dark:text-zinc-50">Cross-departmental request handling</h3>
+				<p class="mb-0 mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+					Responded to technical requests from engineering, maintenance, quality, and sales teams.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm sm:p-7">
+				<h3 class="m-0 text-lg font-bold text-zinc-900 dark:text-zinc-50">Process improvements</h3>
+				<p class="mb-0 mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+					Identified and implemented workflow optimizations that reduced bottlenecks and improved
+					efficiency across departments.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm sm:p-7">
+				<h3 class="m-0 text-lg font-bold text-zinc-900 dark:text-zinc-50">Documentation &amp; training</h3>
+				<p class="mb-0 mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+					Built documentation for automated systems so the team could stay self-sufficient and
+					maintain tools long term.
+				</p>
+			</div>
+		</div>
+
+		<div
+			class="mt-12 rounded-2xl border border-slate-200/80 bg-slate-100/80 px-6 py-8 text-center sm:px-10"
+		>
+			<p class="m-0 max-w-3xl mx-auto text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+				These systems freed four engineers to focus on design work instead of data entry, improving
+				overall department output and quality.
+			</p>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Automation &amp; tools</span>
+			<a
+				href="/"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to home
+			</a>
+		</div>
+	</footer>
+</div>

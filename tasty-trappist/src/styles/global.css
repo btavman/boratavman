@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+	color-scheme: light dark;
+}
+
+html.dark {
+	color-scheme: dark;
+}
+
+html:not(.dark) {
+	color-scheme: light;
+}
+
+/* Lock background scroll when section project nav drawer is open (mobile). */
+@media (max-width: 47.9375rem) {
+	html:has(#product-design-nav:checked),
+	html:has(#technical-leadership-nav:checked) {
+		overflow: hidden;
+	}
+
+	/* Section pages: theme lives in the nav bar; hide duplicate fixed control. */
+	body:has([data-section-nav]) .theme-toggle-floating {
+		display: none;
+	}
+}

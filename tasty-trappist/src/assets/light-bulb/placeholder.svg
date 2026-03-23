@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Placeholder">
+  <rect width="1200" height="900" fill="#fafafa"/>
+  <rect x="48" y="48" width="1104" height="804" fill="#f4f4f5" rx="8"/>
+  <text x="600" y="450" text-anchor="middle" fill="#a1a1aa" font-family="system-ui,sans-serif" font-size="22">Light bulb lamp  add image</text>
+</svg>

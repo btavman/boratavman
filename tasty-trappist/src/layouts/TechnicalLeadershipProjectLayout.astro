@@ -1,0 +1,34 @@
+---
+import { technicalLeadershipProjects } from '../data/technical-leadership';
+import Layout from './Layout.astro';
+import SectionProjectNav from '../components/SectionProjectNav.astro';
+
+interface Props {
+	title: string;
+	/** `null` on the technical leadership contents index. */
+	currentSlug: string | null;
+}
+
+const { title, currentSlug } = Astro.props;
+
+const navProjects = technicalLeadershipProjects.map(({ id, slug, title: t }) => ({
+	id,
+	slug,
+	title: t,
+}));
+---
+
+<Layout title={title}>
+	<div class="flex min-h-dvh flex-col bg-white dark:bg-zinc-950 md:flex-row">
+		<SectionProjectNav
+			sectionLabel="Technical leadership"
+			basePath="/technical-leadership"
+			currentSlug={currentSlug}
+			projects={navProjects}
+			menuId="technical-leadership-nav"
+		/>
+		<div class="min-w-0 flex-1">
+			<slot />
+		</div>
+	</div>
+</Layout>

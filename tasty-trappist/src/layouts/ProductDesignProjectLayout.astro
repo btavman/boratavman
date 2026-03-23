@@ -1,0 +1,30 @@
+---
+import { productDesignProjects } from '../data/product-design';
+import Layout from './Layout.astro';
+import SectionProjectNav from '../components/SectionProjectNav.astro';
+
+interface Props {
+	title: string;
+	/** `null` when viewing the product design contents index. */
+	currentSlug: string | null;
+}
+
+const { title, currentSlug } = Astro.props;
+
+const navProjects = productDesignProjects.map(({ id, slug, title: t }) => ({ id, slug, title: t }));
+---
+
+<Layout title={title}>
+	<div class="flex min-h-dvh flex-col bg-white dark:bg-zinc-950 md:flex-row">
+		<SectionProjectNav
+			sectionLabel="Product design"
+			basePath="/product-design"
+			currentSlug={currentSlug}
+			projects={navProjects}
+			menuId="product-design-nav"
+		/>
+		<div class="min-w-0 flex-1">
+			<slot />
+		</div>
+	</div>
+</Layout>

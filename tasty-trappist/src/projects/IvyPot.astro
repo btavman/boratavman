@@ -1,0 +1,295 @@
+---
+import ph from '../assets/ivy-pot/placeholder.svg';
+import ivyPot from '../assets/ivy-pot/Ivy_pot.png';
+import ass1 from '../assets/ivy-pot/ass1.jpg';
+import ass2 from '../assets/ivy-pot/ass2.jpg';
+import ass3 from '../assets/ivy-pot/ass3.jpg';
+import ass4 from '../assets/ivy-pot/ass4.jpg';
+import circle from '../assets/ivy-pot/cember.jpg';
+import oldDesign from '../assets/ivy-pot/eski.jpg';
+import problem from '../assets/ivy-pot/problem.jpg';
+import finalProduct from '../assets/ivy-pot/final.jpg';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const labelCaps = 'text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500';
+
+const briefPoints = [
+	'Design a decorative planter with integrated climbing support for ivy and trailing plants.',
+	'The user must be able to lift the pot by holding the structure alone.',
+	'The structure must be suitable for both 3D printing and injection molding.',
+	'The structure must be stackable to reach the desired height.',
+] as const;
+
+const assemblySteps = [
+	{
+		n: 1,
+		text: 'Insert the clips into the plant pot.',
+        image: ass1.src,
+	},
+	{
+		n: 2,
+		text: 'Insert the rod into the clip. Twist to lock in place.',
+        image: ass2.src,
+	},
+	{
+		n: 3,
+		text: 'Add one circle between rods. Lower and twist to lock.',
+        image: ass3.src,
+	},
+	{
+		n: 4,
+		text: 'Twist the end pieces to finish the assembly.',
+        image: ass4.src,
+	},
+] as const;
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 text-right ${eyebrow}`}>1.5 Ivy pot</p>
+		</div>
+	</header>
+
+	<!-- Brief + hero render -->
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-16 sm:pt-16 sm:pb-20">
+		<p class={`m-0 ${eyebrow}`}>1.5 Ivy pot</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+			Ivy Pot
+		</h1>
+		<hr class="mt-6 max-w-2xl border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-12 grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+			<div>
+				<p class={`m-0 ${eyebrow}`}>Project brief</p>
+				<ul class="mt-5 list-disc space-y-3 pl-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+					{briefPoints.map((line) => <li>{line}</li>)}
+				</ul>
+			</div>
+			<figure
+				class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+			>
+				<img
+					src={ivyPot.src}
+					width={1200}
+					height={900}
+					alt="3D render: green cylindrical pot with white modular trellis — vertical bars and horizontal rings"
+					class="h-auto w-full object-cover"
+					loading="eager"
+					decoding="async"
+				/>
+			</figure>
+		</div>
+	</section>
+
+	<!-- Design process -->
+	<section class="border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<h2 class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">Design process</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-12 grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+				<div class="space-y-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+					<p>
+						A friend’s father’s dream was to mass-produce an ivy pot. He worked with an engineering
+						team and a patent bureau. However, they found existing patents and he couldn’t obtain his
+						patent.
+					</p>
+					<p>
+						The upfront cost of injection molding was also too high to commit to production without
+						first validating the market. He wanted to experiment with 3D printing instead.
+					</p>
+					<p>
+						His existing design was optimized for injection molding but was not appropriate for 3D
+						printing. I sat down with him to define clear design criteria, then redesigned the
+						structure to suit the manufacturing method.
+					</p>
+				</div>
+				<div>
+					<p class={`m-0 ${eyebrow}`}>Previous design</p>
+					<figure
+						class="mt-4 m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4 shadow-sm sm:p-6"
+					>
+						<img
+							src={oldDesign.src}
+							width={1200}
+							height={900}
+							alt="Patent-style drawing: stacked ring trellis on pot base with numbered callouts and detail insets"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+							Original concept — injection-molding-first geometry and annotations.
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems & solutions -->
+	<section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+		<h2 class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">Problems &amp; adaptations</h2>
+		<p class="mt-3 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
+			Constraints from printing cost, time, and part strength drove two major design pivots.
+		</p>
+
+		<div class="mt-12 space-y-12">
+			<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm sm:p-8">
+				<p class={`m-0 ${labelCaps}`}>Problem 1</p>
+				<p class="mb-0 mt-2 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+					Printing the original pot body required 310 grams of filament and took approximately 8 hours.
+					This made the unit cost too high for commercial viability.
+				</p>
+				<p class={`mb-0 mt-6 ${labelCaps}`}>Solution 1</p>
+				<p class="mb-0 mt-2 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+					I found a $3 injection-molded pot at Walmart. It’s simple, cost-effective, and available in
+					multiple brands.
+				</p>
+			</div>
+
+			<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm sm:p-8">
+				<p class={`m-0 ${labelCaps}`}>Problem 2</p>
+				<p class="mb-0 mt-2 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+					When the support poles were printed vertically, layer adhesion along the Z-axis was too weak.
+				</p>
+				<p class={`mb-0 mt-6 ${labelCaps}`}>Solution 2</p>
+				<p class="mb-0 mt-2 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+					Redesigned as a modular snap-together system. Each pole is a separate printed part that can be
+					replaced independently.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+				<figure
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={problem.src}
+						width={1200}
+						height={900}
+						alt="CAD render: pot rim with three modular vertical poles and slot features"
+						class="h-auto w-full object-contain p-4"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption class="h-full border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+						Modular base and pole layout in CAD.
+					</figcaption>
+				</figure>
+				<figure
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={circle.src}
+						width={1200}
+						height={900}
+						alt="Diagram: Z-axis layer failure under side load versus reinforced z-anchor concept"
+						class="h-auto w-full object-contain p-4"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+						Layer adhesion issue and reinforcement strategy (variable material z-anchors).
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final product + assembly -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>1.5 Ivy pot</p>
+			<h2 class="m-0 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+				Final product &amp; assembly
+			</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-12 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-16">
+				<div>
+					<figure
+						class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm"
+					>
+						<img
+							src={finalProduct.src}
+							width={1200}
+							height={900}
+							alt="Photo: white printed trellis in a green pot with a small tree seedling"
+							class="h-auto w-full object-cover"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400">
+							As-built trellis in a store-bought pot.
+						</figcaption>
+					</figure>
+					<aside
+						class="mt-4 rounded-lg border border-amber-200/80 bg-amber-50/80 px-4 py-3 text-sm text-amber-950 dark:border-amber-800/50 dark:bg-amber-950/40 dark:text-amber-100"
+						role="note"
+					>
+						<strong class="font-semibold">Note:</strong> This isn’t ivy — it’s my baby lemon tree.
+					</aside>
+				</div>
+
+				<div>
+					<h3 class="m-0 text-lg font-bold text-zinc-900 dark:text-zinc-50">Assembly</h3>
+					<ol
+						class="mt-6 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 sm:gap-6"
+					>
+						{
+							assemblySteps.map((step) => (
+								<li>
+									<figure class="m-0 flex h-full flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm">
+										<div class="flex flex-1 items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 p-4">
+											<img
+												src={step.image}
+												width={1200}
+												height={900}
+												alt=""
+												class="h-28 w-full object-contain opacity-90 sm:h-32"
+												loading="lazy"
+												decoding="async"
+											/>
+										</div>
+										<figcaption class="border-t border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
+											<span class="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+												Step {step.n}
+											</span>
+											<p class="mb-0 mt-2 text-sm leading-snug text-zinc-800 dark:text-zinc-200">{step.text}</p>
+										</figcaption>
+									</figure>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Ivy pot</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

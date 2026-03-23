@@ -1,0 +1,214 @@
+---
+const sectionCardClass =
+	'welcome-card group block rounded-lg px-3 py-2 text-inherit no-underline transition-colors duration-300 ease-out hover:bg-zinc-50 dark:hover:bg-zinc-900/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 dark:focus-visible:ring-zinc-500 dark:focus-visible:ring-offset-zinc-950';
+---
+
+<div
+	class="welcome-root box-border flex min-h-dvh flex-col justify-between overflow-x-clip bg-white dark:bg-zinc-950 px-[clamp(1.25rem,5vw,3.5rem)] py-[clamp(1.25rem,4vw,2.5rem)] font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-black dark:text-zinc-50 **:box-border"
+>
+	<header>
+		<hr class="welcome-line m-0 h-px w-full border-0 bg-zinc-300 dark:bg-zinc-600" />
+		<p
+			class="welcome-rise welcome-d-eyebrow mt-5 text-sm font-medium uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400 sm:text-[0.8125rem]"
+		>
+			I like building stuff
+		</p>
+	</header>
+
+	<div
+		class="flex flex-1 flex-col justify-center py-[clamp(2rem,6vh,4rem)]"
+	>
+		<h1
+			class="welcome-head welcome-d-title m-0 text-[clamp(3rem,11vw,5.25rem)] font-bold uppercase leading-[1.02] tracking-[0.02em]"
+		>
+			Bora Tavman
+		</h1>
+		<p
+			class="welcome-rise welcome-d-subtitle mt-3 text-[clamp(1.125rem,2.6vw,1.5rem)] font-normal text-zinc-600 dark:text-zinc-300"
+		>
+			Mechanical Engineer
+		</p>
+		<hr
+			class="welcome-line welcome-d-rule mb-0 mt-3 h-px w-10 border-0 bg-zinc-300 dark:bg-zinc-600"
+		/>
+
+		<div
+			class="welcome-grid mt-[clamp(2rem,5vh,3.5rem)] grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-[clamp(1.5rem,4vw,3rem)]"
+			role="list"
+		>
+			<a href="/product-design" class={sectionCardClass}>
+				<article role="listitem">
+					<span
+						class="mb-2 block text-sm font-medium tabular-nums tracking-[0.06em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+						aria-hidden="true">01</span>
+					<h2
+						class="mb-2 text-[clamp(1.0625rem,1.8vw,1.25rem)] font-bold leading-snug text-black transition-colors duration-300 group-hover:text-zinc-800 dark:text-zinc-50 dark:group-hover:text-white"
+					>
+						Product Design
+					</h2>
+					<p
+						class="m-0 text-sm leading-relaxed tracking-[0.02em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+					>
+						CAD · Rendering · Prototyping
+					</p>
+				</article>
+			</a>
+			<a href="/automation-and-tools" class={sectionCardClass}>
+				<article role="listitem">
+					<span
+						class="mb-2 block text-sm font-medium tabular-nums tracking-[0.06em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+						aria-hidden="true">02</span>
+					<h2
+						class="mb-2 text-[clamp(1.0625rem,1.8vw,1.25rem)] font-bold leading-snug text-black transition-colors duration-300 group-hover:text-zinc-800 dark:text-zinc-50 dark:group-hover:text-white"
+					>
+						Automation &amp; Tools
+					</h2>
+					<p
+						class="m-0 text-sm leading-relaxed tracking-[0.02em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+					>
+						VBA · Workflow · Efficiency
+					</p>
+				</article>
+			</a>
+			<a href="/technical-leadership" class={sectionCardClass}>
+				<article role="listitem">
+					<span
+						class="mb-2 block text-sm font-medium tabular-nums tracking-[0.06em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+						aria-hidden="true">03</span>
+					<h2
+						class="mb-2 text-[clamp(1.0625rem,1.8vw,1.25rem)] font-bold leading-snug text-black transition-colors duration-300 group-hover:text-zinc-800 dark:text-zinc-50 dark:group-hover:text-white"
+					>
+						Technical Leadership
+					</h2>
+					<p
+						class="m-0 text-sm leading-relaxed tracking-[0.02em] text-zinc-500 transition-colors duration-300 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+					>
+						Strategy · Execution · Results
+					</p>
+				</article>
+			</a>
+		</div>
+	</div>
+
+	<footer class="mt-auto">
+		<hr class="welcome-line welcome-d-footrule m-0 mb-5 h-px w-full border-0 bg-zinc-300 dark:bg-zinc-600" />
+		<div
+			class="flex flex-col items-end gap-3 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-end sm:gap-x-5 sm:gap-y-2"
+		>
+			<p
+				class="welcome-rise welcome-d-footer m-0 max-w-full text-right text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base"
+			>
+				<a
+					href="https://ca.linkedin.com/in/bora-tavman"
+					title="https://ca.linkedin.com/in/bora-tavman"
+					class="font-medium text-zinc-900 underline decoration-zinc-400 underline-offset-[0.2em] transition-colors hover:decoration-zinc-900 dark:text-zinc-100 dark:decoration-zinc-500 dark:hover:decoration-zinc-300"
+					>LinkedIn</a
+				>
+				<span class="mx-2 text-zinc-400 dark:text-zinc-500" aria-hidden="true">·</span>
+				<a
+					href="mailto:br.tavman@gmail.com"
+					class="font-medium text-zinc-900 underline decoration-zinc-400 underline-offset-[0.2em] transition-colors hover:decoration-zinc-900 dark:text-zinc-100 dark:decoration-zinc-500 dark:hover:decoration-zinc-300"
+					>br.tavman@gmail.com</a
+				>
+				<span class="mx-2 text-zinc-400 dark:text-zinc-500" aria-hidden="true">·</span>
+				<span class="text-zinc-500 dark:text-zinc-500">Toronto, ON</span>
+			</p>
+		</div>
+	</footer>
+</div>
+
+<style>
+	@keyframes welcome-line-in {
+		from {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+		to {
+			opacity: 1;
+			transform: scaleX(1);
+		}
+	}
+
+	@keyframes welcome-rise {
+		from {
+			opacity: 0;
+			transform: translateY(1.125rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes welcome-head {
+		from {
+			opacity: 0;
+			transform: translateY(0.3em);
+			letter-spacing: 0.22em;
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+			letter-spacing: 0.02em;
+		}
+	}
+
+	.welcome-line {
+		transform-origin: left center;
+		animation: welcome-line-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+
+	.welcome-rise {
+		animation: welcome-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	.welcome-head {
+		animation: welcome-head 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	.welcome-d-eyebrow {
+		animation-delay: 0.16s;
+	}
+	.welcome-d-title {
+		animation-delay: 0.28s;
+	}
+	.welcome-d-subtitle {
+		animation-delay: 0.42s;
+	}
+	.welcome-d-rule {
+		animation-delay: 0.52s;
+	}
+	.welcome-d-footrule {
+		animation-delay: 0.92s;
+	}
+	.welcome-d-footer {
+		animation-delay: 1.02s;
+	}
+
+	.welcome-grid > .welcome-card {
+		animation: welcome-rise 0.78s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+	.welcome-grid > .welcome-card:nth-child(1) {
+		animation-delay: 0.58s;
+	}
+	.welcome-grid > .welcome-card:nth-child(2) {
+		animation-delay: 0.7s;
+	}
+	.welcome-grid > .welcome-card:nth-child(3) {
+		animation-delay: 0.82s;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.welcome-line,
+		.welcome-rise,
+		.welcome-head,
+		.welcome-grid > .welcome-card {
+			animation: none !important;
+			opacity: 1 !important;
+			transform: none !important;
+		}
+		.welcome-head {
+			letter-spacing: 0.02em;
+		}
+	}
+</style>

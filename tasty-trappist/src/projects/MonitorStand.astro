@@ -1,0 +1,315 @@
+---
+import placeholder from '../assets/monitor-stand/placeholder.svg';
+import equations from '../assets/monitor-stand/equations.jpg';
+import assemblyDrawing from '../assets/monitor-stand/Assembly_drawing.jpg';
+import step1 from '../assets/monitor-stand/step1.jpg';
+import step2 from '../assets/monitor-stand/step2.jpg';
+import step3 from '../assets/monitor-stand/step3.jpg';
+import step4 from '../assets/monitor-stand/step4.jpg';
+import step5 from '../assets/monitor-stand/step5.jpg';
+import monitorArm from '../assets/monitor-stand/monitor_arm.jpg';
+import reinforcing from '../assets/monitor-stand/Reinforcing.jpg';
+const assemblySteps = [
+	{
+		n: 1,
+		text: 'Heat-insert the M5 nuts (1), (2), (3) into their places.',
+        image: step1.src,
+	},
+	{
+		n: 2,
+		text: 'Insert the rod into the base. Secure with the bottom set screw (5).',
+        image: step2.src,
+	},
+	{
+		n: 3,
+		text: 'Slide the VESA mount attachment (6) onto the rod.',
+        image: step3.src,
+	},
+	{
+		n: 4,
+		text: 'Secure the attachment with set screws (7), (8).',
+        image: step4.src,
+	},
+	{
+		n: 5,
+		text: 'Slide the VESA mount plate (9) onto the part (6).',
+        image: step5.src,
+	},
+] as const;
+
+const bom = [
+	{ item: '1', name: 'Base', qty: '1' },
+	{ item: '2', name: 'Pole', qty: '1' },
+	{ item: '3', name: 'VESA mount', qty: '1' },
+	{ item: '4', name: 'VESA mount adapter', qty: '1' },
+	{ item: '5', name: 'M4 × 0.7 — 10 mm hex socket cap screw', qty: '4' },
+	{ item: '6', name: 'M5 × 0.8 — 12 mm hex socket cap screw', qty: '3' },
+] as const;
+
+const briefPoints = [
+	'Design a low-cost, 3D-printable monitor arm with a base.',
+	'Use a minimum amount of plastic to reduce cost and print time.',
+	'Height-adjustable; support monitors up to 27″.',
+	'Standard VESA mount compatibility.',
+	'Accommodate uncertainty in final rod dimensions.',
+	'Minimal hardware and straightforward assembly.',
+] as const;
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+		</div>
+	</header>
+
+	<section class="mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pb-20 sm:pt-16">
+		<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+			<div>
+				<h1 class="m-0 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+					Monitor Stand
+				</h1>
+				<p class="mt-5 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+					Low-cost, parametric desk stand with a bamboo rod shaft, printed base and VESA hardware, and
+					assembly designed for a single tool.
+				</p>
+			</div>
+			<figure
+				class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+			>
+				<img
+					src={monitorArm.src}
+					width={1200}
+					height={800}
+					alt="Exploded view of the monitor stand: base, pole, VESA bracket, adapter, and fasteners"
+					class="h-auto w-full object-cover"
+					loading="eager"
+					decoding="async"
+				/>
+			</figure>
+		</div>
+	</section>
+
+	<section class="border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>Project brief</p>
+			<h2 class={`${sectionTitle} max-w-2xl`}>What it needed to do</h2>
+			<ul class="mt-8 max-w-2xl list-disc space-y-3 pl-5 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+				{briefPoints.map((line) => <li>{line}</li>)}
+			</ul>
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+		<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+		<h2 class={sectionTitle}>Design process</h2>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-12 grid gap-14 lg:grid-cols-3 lg:gap-16">
+			<div class="space-y-6 lg:col-span-2">
+				<div class="space-y-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+					<p>
+						The design process began with minimizing material use. The goal was a stand people can
+						build from widely available materials: a bamboo rod as the shaft, three M5 bolts and nuts,
+						and PLA for printed parts.
+					</p>
+					<p>
+						All printed parts were designed so that <strong class="font-semibold text-zinc-900 dark:text-zinc-50"
+							>no support material</strong
+						> is required. PLA is not ideal under sustained creep loads; <strong
+							class="font-semibold text-zinc-900 dark:text-zinc-50">ABS</strong
+						> is a better choice for anyone printing in an enclosed printer.
+					</p>
+				</div>
+				<figure
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={reinforcing.src}
+						width={1200}
+						height={800}
+						alt="Hand-drawn concept sketch: base with reinforcing ribs, rod, adapter versions, overhang notes"
+						class="h-auto w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+						Early sketches — ribs, adapter concepts, and overhang considerations.
+					</figcaption>
+				</figure>
+			</div>
+
+			<aside class="space-y-8 lg:col-span-1">
+				<div>
+					<p class={`m-0 ${eyebrow}`}>Key decisions</p>
+					<ul class="mt-6 space-y-4">
+						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Design for failure</h3>
+							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+								Separating the VESA mount from the rod adapter lets damaged parts be replaced without
+								scrapping the whole assembly.
+							</p>
+						</li>
+						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Single-tool operation</h3>
+							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+								Adjustments and locking are intended to use one tool end-to-end.
+							</p>
+						</li>
+						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Parametric adaptability</h3>
+							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+								Base and VESA adapter are driven by rod diameter so the design survives real-world
+								stock tolerances.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<figure
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={equations.src}
+						width={1200}
+						height={800}
+						alt="SolidWorks equations table showing Rod_diameter global variable and linked sketch dimensions"
+						class="h-auto w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+						Global <code class="rounded bg-zinc-100 dark:bg-zinc-800/70 px-1.5 py-0.5 font-mono text-xs"
+							>Rod_diameter</code
+						> drives adapter clearance (example: 1.25 in → 31.75 mm).
+					</figcaption>
+				</figure>
+			</aside>
+		</div>
+	</section>
+
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+			<h2 class={sectionTitle}>Assembly instructions</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<ol
+				class="mt-12 grid list-none grid-cols-1 gap-10 p-0 sm:grid-cols-2 xl:grid-cols-5 xl:gap-6"
+			>
+				{
+					assemblySteps.map((step) => (
+						<li class="flex flex-col">
+							<figure class="m-0 flex flex-1 flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+								<div class="flex flex-1 items-center justify-center p-4">
+									<img
+										src={step.image}
+										width={1200}
+										height={800}
+										alt=""
+										class="h-auto max-h-48 w-full object-contain opacity-90 xl:max-h-40"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4">
+									<span class="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+										Step {step.n}
+									</span>
+									<p class="mb-0 mt-2 text-sm leading-snug text-zinc-800 dark:text-zinc-200">{step.text}</p>
+								</figcaption>
+							</figure>
+						</li>
+					))
+				}
+			</ol>
+			<p class="mt-8 text-center text-xs text-zinc-400 dark:text-zinc-500 xl:hidden">
+				On small screens, steps read top to bottom; on a large display they match the original
+				left-to-right sequence.
+			</p>
+		</div>
+	</section>
+
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+			<h2 class={sectionTitle}>Dimensions &amp; bill of materials</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<figure
+				class="mt-10 m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm"
+			>
+				<div class="overflow-x-auto">
+					<img
+						src={assemblyDrawing.src}
+						width={1200}
+						height={800}
+						alt="Engineering drawing sheet: top, front, side, and isometric views with key dimensions"
+						class="h-auto min-w-[640px] w-full object-contain p-4 sm:min-w-0 sm:p-6"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+					Drawing set includes footprint (150 mm depth, Ø31.75 pole opening), base (200 × 45 mm), VESA
+					75 / 100 mm patterns, and bracket stack heights — replace this placeholder with your exported
+					sheet.
+				</figcaption>
+			</figure>
+
+			<div class="mt-12 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm">
+				<table class="w-full border-collapse text-left text-sm">
+					<thead>
+						<tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Item</th>
+							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Part</th>
+							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Qty</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							bom.map((row, i) => (
+								<tr
+									class:list={[
+										'border-b border-zinc-100 transition-colors duration-150 hover:bg-amber-50/40 dark:border-zinc-800 dark:hover:bg-amber-950/35',
+										i === bom.length - 1 && 'border-b-0',
+									]}
+								>
+									<td class="px-5 py-3.5 font-mono tabular-nums text-zinc-500 dark:text-zinc-400">{row.item}</td>
+									<td class="px-5 py-3.5 text-zinc-800 dark:text-zinc-200">{row.name}</td>
+									<td class="px-5 py-3.5 tabular-nums text-zinc-600 dark:text-zinc-400">{row.qty}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Monitor stand</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

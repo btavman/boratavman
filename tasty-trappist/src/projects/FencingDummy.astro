@@ -1,0 +1,297 @@
+---
+import ph from '../assets/fencing-dummy/placeholder.svg';
+import fencing from '../assets/fencing-dummy/fencing.jpg';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const label = 'text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500';
+
+const hardConstraints = [
+	'Hold a standard foil blade and mimic human arm motion.',
+	'Adjustable height and reach to fit roughly 95% of adults.',
+	'Perform fencing movements: forward/back steps, lunges, and parries 2, 4, 5, and 6.',
+	'Generate unpredictable sequences of five attack actions.',
+	'Operate using mechanical mechanisms only — no electronic controllers.',
+] as const;
+
+const parries = [
+	{ n: 1, name: 'Pronation Prime' },
+	{ n: 2, name: 'Pronation Seconde' },
+	{ n: 3, name: 'Pronation Tierce' },
+	{ n: 4, name: 'Quarte' },
+	{ n: 5, name: 'Pronation Quinte' },
+	{ n: 6, name: 'Sixte' },
+	{ n: 7, name: 'Septime' },
+	{ n: 8, name: 'Octave' },
+	{ n: 9, name: 'Neuvieme' },
+] as const;
+
+const capabilities = [
+	'Four defensive blade positions (parries)',
+	'Forward and backward stepping',
+	'Lunge attack via scissor arm',
+	'Unpredictable five-move attack sequences',
+	'Adjustable reach and height',
+	'Single motor, zero electronics',
+] as const;
+
+const takeaways = [
+	{
+		title: 'Unblocked a stalled team',
+		line: 'by providing clear technical direction',
+	},
+	{
+		title: 'Broke complexity into subsystems',
+		line: 'making the problem tractable for the group',
+	},
+	{
+		title: 'Delivered under pressure',
+		line: 'from stalled to A+ in two weeks',
+	},
+] as const;
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4"
+		>
+			<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+				<a
+					href="/"
+					class="text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+					>← Home</a
+				>
+				<a
+					href="/technical-leadership"
+					class="text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+					>← Technical leadership</a
+				>
+			</div>
+			<p class={`m-0 text-right ${eyebrow}`}>3.1 Automated fencing dummy</p>
+		</div>
+	</header>
+
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-14 sm:pt-16">
+		<p class={`m-0 ${eyebrow}`}>3.1 Automated fencing dummy</p>
+		<div class="mt-3 flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
+			<h1
+				class="m-0 max-w-xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+			>
+				Automated Fencing Dummy
+			</h1>
+			<aside
+				class="shrink-0 border-l-2 border-zinc-900 dark:border-zinc-100 pl-6 sm:min-w-30 sm:pl-8"
+				aria-label="Final project grade: A plus"
+			>
+				<p class="m-0 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-zinc-400 dark:text-zinc-500">
+					Final grade
+				</p>
+				<p class="m-0 mt-2 text-4xl font-semibold leading-none tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
+					A+
+				</p>
+			</aside>
+		</div>
+		<hr class="mt-8 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+			<div class="space-y-10 lg:col-span-3">
+				<div>
+					<p class={`m-0 ${label}`}>The brief</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						Designed a purely mechanical fencing training station capable of simulating an opponent’s
+						attack, so fencers could practice defensive technique without a live partner.
+					</p>
+				</div>
+				<div>
+					<p class={`m-0 ${label}`}>The problem</p>
+					<div class="mt-4 space-y-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						<p>
+							University projects often suffer from weak management. In a team of five friends, we
+							stayed stuck in open-ended ideation. With two weeks left and no CAD started, the
+							project was at real risk.
+						</p>
+						<p>
+							I stepped in, produced a technical roadmap, and split the machine into buildable
+							subsystems so everyone could execute in parallel.
+						</p>
+						<p>
+							Some suggested hiding the original note I sent the team because the tone was blunt. I
+							keep it in the story because it shows how I take charge when a group needs direction. We
+							shipped the full system in under two weeks, earned an A+, and the team stayed friends —
+							they said the clarity was what we needed.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="lg:col-span-2">
+				<div
+					class="rounded-2xl border border-sky-200/80 bg-sky-50/90 px-6 py-8 shadow-sm sm:px-8 sm:py-10"
+				>
+					<p class="m-0 text-lg font-bold leading-snug text-zinc-900 dark:text-zinc-50 sm:text-xl">
+						Stalled project → delivered in 2 weeks
+					</p>
+					<p class="mb-0 mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+						MCG 2101 · University of Ottawa · Winter 2022
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-16">
+				<div>
+					<p class={`m-0 ${label}`}>Hard constraints</p>
+					<ul class="mt-5 list-disc space-y-3 pl-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						{hardConstraints.map((c) => <li>{c}</li>)}
+					</ul>
+				</div>
+				<div>
+					<p class={`m-0 ${label}`}>Parries reference</p>
+					<p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+						Standard guard positions — the mechanism targets four corners of the tip workspace for
+						parries 2, 4, 5, and 6.
+					</p>
+					<ul
+						class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2"
+					>
+						{
+							parries.map((p) => (
+								<li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
+									<span class="w-6 shrink-0 tabular-nums text-zinc-400 dark:text-zinc-500">{p.n} &nbsp;</span>
+									<span>{p.name}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+		<h2 class="m-0 text-2xl font-bold tracking-tight sm:text-3xl">Mechanical concept</h2>
+		<hr class="mt-5 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-10 space-y-10 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+			<div>
+				<p class={`m-0 ${label}`}>Tip workspace &amp; syringe actuation</p>
+				<p class="mb-0 mt-4">
+					Parries 2, 4, 5, and 6 map to four corners of a square in foil-tip space — two orthogonal
+					motions are enough to reach them. Pairs of syringes (hydraulic coupling) drive X and Y motion
+					at the wrist; a spring return balances pressure where needed.
+				</p>
+			</div>
+			<div>
+				<p class={`m-0 ${label}`}>Lunge &amp; reach</p>
+				<p class="mb-0 mt-4">
+					A scissor arm provides lunge extension (motor- or syringe-driven). Reach is set with a simple
+					pin-in-rack (“gym rack”) adjustment so fencers of different sizes can use the same base
+					hardware.
+				</p>
+			</div>
+			<div>
+				<p class={`m-0 ${label}`}>Rotating barrel cam</p>
+				<p class="mb-0 mt-4">
+					Five stacked plates on one shaft each drive a subsystem: wrist left–right, wrist up–down,
+					scissor lunge, one forward step pulse, one backward step pulse — triggered by cams, syringes,
+					and contact switches. Each plate is divided into five 72° sectors; each sector encodes one
+					five-step attack phrase, so timing stays repeatable while combinations feel varied.
+				</p>
+			</div>
+		</div>
+
+		<figure
+			class="mt-12 m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+		>
+			<img
+				src={fencing.src}
+				width={1600}
+				height={1000}
+				alt="SolidWorks drawing sheet: assembly views, scissor arm, wrist detail, movement disks, and wheel drive"
+				class="h-auto w-full object-contain p-4 sm:p-6"
+				loading="lazy"
+				decoding="async"
+			/>
+			<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+				Drawing set — full assembly, arm, wrist, cam disks, and adjusters (replace with your exported
+				sheet).
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<p class={`m-0 ${eyebrow}`}>3.1 Automated fencing dummy</p>
+			<h2 class="m-0 mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+				System integration &amp; results
+			</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+				<div>
+					<p class={`m-0 ${label}`}>Complete system</p>
+					<div class="mt-5 space-y-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						<p>
+							The integrated machine uses one electric motor to spin a barrel cam that mechanically
+							sequences every subsystem. As the barrel turns, plates push and release syringes and
+							contact switches in order — producing unpredictable-looking attack phrases without
+							electronics, sensors, or code.
+						</p>
+						<p>
+							The hard part was believable randomness from a purely mechanical controller; the
+							multi-plate cam barrel was the compact answer.
+						</p>
+					</div>
+				</div>
+				<div class="space-y-10">
+					<div>
+						<p class={`m-0 ${label}`}>System capabilities</p>
+						<ul class="mt-5 list-none space-y-3 p-0">
+							{
+								capabilities.map((line) => (
+									<li class="flex gap-3 text-base text-zinc-700 dark:text-zinc-300">
+										<span class="text-zinc-400 dark:text-zinc-500" aria-hidden="true">
+											—
+										</span>
+										<span>{line}</span>
+									</li>
+								))
+							}
+						</ul>
+					</div>
+					<div>
+						<p class={`m-0 ${label}`}>Leadership takeaways</p>
+						<ul class="mt-5 list-none space-y-6 p-0">
+							{
+								takeaways.map((t) => (
+									<li>
+										<p class="m-0 font-bold text-zinc-900 dark:text-zinc-50">{t.title}</p>
+										<p class="mb-0 mt-1 text-sm text-zinc-500 dark:text-zinc-400">{t.line}</p>
+									</li>
+								))
+							}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div
+			class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400"
+		>
+			<span>Bora Tavman — Fencing dummy</span>
+			<a
+				href="/technical-leadership"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>
