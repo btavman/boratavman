@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir tasty-trappistsrcassetsdrawer-divider )",
+      "Bash(dir tasty-trappistsrcassetsivy-pot )",
+      "Bash(dir tasty-trappistsrcassetslight-bulb )",
+      "Bash(dir tasty-trappistsrcassetsmonitor-stand)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
