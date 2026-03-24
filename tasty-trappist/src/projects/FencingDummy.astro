@@ -103,27 +103,28 @@ const takeaways = [
 				<div>
 					<p class={`m-0 ${label}`}>The brief</p>
 					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
-						Designed a purely mechanical fencing training station capable of simulating an opponent’s
-						attack, so fencers could practice defensive technique without a live partner.
+						Designed a purely mechanical fencing training station capable
+						of simulating an opponent's attack, allowing fencers to practice
+						defensive techniques without a training partner.
 					</p>
 				</div>
 				<div>
 					<p class={`m-0 ${label}`}>The problem</p>
 					<div class="mt-4 space-y-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
 						<p>
-							University projects often suffer from weak management. In a team of five friends, we
-							stayed stuck in open-ended ideation. With two weeks left and no CAD started, the
-							project was at real risk.
+							University projects often suffer from a lack of clear management. In a team of five friends,
+							we became stuck in the "idea generation" phase. With only two weeks left and no CAD models started,
+							the project was at risk.
 						</p>
 						<p>
-							I stepped in, produced a technical roadmap, and split the machine into buildable
-							subsystems so everyone could execute in parallel.
+							I realized that I needed to step in. I created a technical roadmap, and split the machine into buildable subsystems
+							so everyone could execute in parallel.
 						</p>
 						<p>
-							Some suggested hiding the original note I sent the team because the tone was blunt. I
-							keep it in the story because it shows how I take charge when a group needs direction. We
-							shipped the full system in under two weeks, earned an A+, and the team stayed friends —
-							they said the clarity was what we needed.
+							Some suggested I shouldn't include the original document I sent to my team because the tone was blunt.
+							However, I believe it demonstrates my ability to take charge when necessary to solve problems piece-by-piece.
+							We completed the entire project in under two weeks, earned an A+, and most importantly my teammates and
+							I remain close friends because they appreciated the much needed direction.
 						</p>
 						<a
 							href={projectDocumentPdf}
@@ -157,25 +158,6 @@ const takeaways = [
 					<p class={`m-0 ${label}`}>Hard constraints</p>
 					<ul class="mt-5 list-disc space-y-3 pl-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
 						{hardConstraints.map((c) => <li>{c}</li>)}
-					</ul>
-				</div>
-				<div>
-					<p class={`m-0 ${label}`}>Parries reference</p>
-					<p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-						Standard guard positions — the mechanism targets four corners of the tip workspace for
-						parries 2, 4, 5, and 6.
-					</p>
-					<ul
-						class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2"
-					>
-						{
-							parries.map((p) => (
-								<li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
-									<span class="w-6 shrink-0 tabular-nums text-zinc-400 dark:text-zinc-500">{p.n} &nbsp;</span>
-									<span>{p.name}</span>
-								</li>
-							))
-						}
 					</ul>
 				</div>
 			</div>
