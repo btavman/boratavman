@@ -2,6 +2,9 @@
 import ph from '../assets/fencing-dummy/placeholder.svg';
 import fencing from '../assets/fencing-dummy/fencing.jpg';
 
+/** Served from `public/documents/` so the URL works the same in dev, preview, and static hosting. */
+const projectDocumentPdf = `${import.meta.env.BASE_URL}documents/project_document.pdf`;
+
 const shell =
 	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
 const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
@@ -122,6 +125,13 @@ const takeaways = [
 							shipped the full system in under two weeks, earned an A+, and the team stayed friends —
 							they said the clarity was what we needed.
 						</p>
+						<a
+							href={projectDocumentPdf}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+							>View the full document</a
+						>
 					</div>
 				</div>
 			</div>

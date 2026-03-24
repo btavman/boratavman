@@ -211,20 +211,20 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 			>
 				{
 					assemblySteps.map((step) => (
-						<li class="flex flex-col">
-							<figure class="m-0 flex flex-1 flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
-								<div class="flex flex-1 items-center justify-center p-4">
+						<li class="flex flex-col h-full">
+							<figure class="m-0 flex flex-col flex-1 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+								<div class="flex items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 h-64">
 									<img
 										src={step.image}
 										width={1200}
 										height={800}
 										alt=""
-										class="h-auto max-h-48 w-full object-contain opacity-90 xl:max-h-40"
+										class="h-full w-full object-contain p-4"
 										loading="lazy"
 										decoding="async"
 									/>
 								</div>
-								<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4">
+								<figcaption class="flex-1 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4 flex flex-col">
 									<span class="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
 										Step {step.n}
 									</span>
@@ -262,40 +262,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 						decoding="async"
 					/>
 				</div>
-				<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
-					Drawing set includes footprint (150 mm depth, Ø31.75 pole opening), base (200 × 45 mm), VESA
-					75 / 100 mm patterns, and bracket stack heights — replace this placeholder with your exported
-					sheet.
-				</figcaption>
 			</figure>
-
-			<div class="mt-12 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm">
-				<table class="w-full border-collapse text-left text-sm">
-					<thead>
-						<tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
-							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Item</th>
-							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Part</th>
-							<th class="px-5 py-3 font-semibold text-zinc-900 dark:text-zinc-50" scope="col">Qty</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							bom.map((row, i) => (
-								<tr
-									class:list={[
-										'border-b border-zinc-100 transition-colors duration-150 hover:bg-amber-50/40 dark:border-zinc-800 dark:hover:bg-amber-950/35',
-										i === bom.length - 1 && 'border-b-0',
-									]}
-								>
-									<td class="px-5 py-3.5 font-mono tabular-nums text-zinc-500 dark:text-zinc-400">{row.item}</td>
-									<td class="px-5 py-3.5 text-zinc-800 dark:text-zinc-200">{row.name}</td>
-									<td class="px-5 py-3.5 tabular-nums text-zinc-600 dark:text-zinc-400">{row.qty}</td>
-								</tr>
-							))
-						}
-					</tbody>
-				</table>
-			</div>
 		</div>
 	</section>
 

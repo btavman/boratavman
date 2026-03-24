@@ -173,33 +173,37 @@ const assemblySteps = [
 
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+					class="m-0 flex flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm"
 				>
-					<img
-						src={problem.src}
-						width={1200}
-						height={900}
-						alt="CAD render: pot rim with three modular vertical poles and slot features"
-						class="h-auto w-full object-contain p-4"
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption class="h-full border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+					<div class="flex items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 h-64">
+						<img
+							src={problem.src}
+							width={1200}
+							height={900}
+							alt="CAD render: pot rim with three modular vertical poles and slot features"
+							class="h-full w-full object-contain p-4"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
 						Modular base and pole layout in CAD.
 					</figcaption>
 				</figure>
 				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+					class="m-0 flex flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm"
 				>
-					<img
-						src={circle.src}
-						width={1200}
-						height={900}
-						alt="Diagram: Z-axis layer failure under side load versus reinforced z-anchor concept"
-						class="h-auto w-full object-contain p-4"
-						loading="lazy"
-						decoding="async"
-					/>
+					<div class="flex items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 h-64">
+						<img
+							src={circle.src}
+							width={1200}
+							height={900}
+							alt="Diagram: Z-axis layer failure under side load versus reinforced z-anchor concept"
+							class="h-full w-full object-contain p-4"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
 						Layer adhesion issue and reinforcement strategy (variable material z-anchors).
 					</figcaption>
@@ -250,20 +254,20 @@ const assemblySteps = [
 					>
 						{
 							assemblySteps.map((step) => (
-								<li>
-									<figure class="m-0 flex h-full flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm">
-										<div class="flex flex-1 items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 p-4">
+								<li class="flex flex-col h-full">
+									<figure class="m-0 flex flex-1 flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+										<div class="flex items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 h-64">
 											<img
 												src={step.image}
 												width={1200}
 												height={900}
 												alt=""
-												class="h-28 w-full object-contain opacity-90 sm:h-32"
+												class="h-full w-full object-contain p-4"
 												loading="lazy"
 												decoding="async"
 											/>
 										</div>
-										<figcaption class="border-t border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
+										<figcaption class="flex-1 border-t border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950 flex flex-col">
 											<span class="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
 												Step {step.n}
 											</span>
