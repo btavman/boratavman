@@ -72,7 +72,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 			>
 				← Product design
 			</a>
-			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor stand</p>
 		</div>
 	</header>
 
@@ -83,8 +83,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 					Monitor Stand
 				</h1>
 				<p class="mt-5 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-					Low-cost, parametric desk stand with a bamboo rod shaft, printed base and VESA hardware, and
-					assembly designed for a single tool.
+					Low-cost, parametric desk stand with a bamboo rod shaft and printed parts.
 				</p>
 			</div>
 			<figure
@@ -119,7 +118,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
 
 		<div class="mt-12 grid gap-14 lg:grid-cols-3 lg:gap-16">
-			<div class="space-y-6 lg:col-span-2">
+			<div class="flex flex-col space-y-6 lg:col-span-2">
 				<div class="space-y-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
 					<p>
 						The design process began with minimizing material use. The goal was a stand people can
@@ -135,41 +134,59 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 					</p>
 				</div>
 				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col"
 				>
-					<img
-						src={reinforcing.src}
-						width={1200}
-						height={800}
-						alt="Hand-drawn concept sketch: base with reinforcing ribs, rod, adapter versions, overhang notes"
-						class="h-auto w-full object-cover"
-						loading="lazy"
-						decoding="async"
-					/>
+					<div class="flex items-center justify-center p-4">
+						<img
+							src={reinforcing.src}
+							width={1200}
+							height={800}
+							alt="Hand-drawn concept sketch: base with reinforcing ribs, rod, adapter versions, overhang notes"
+							class="h-auto max-w-md object-contain -rotate-90"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
 					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
 						Early sketches — ribs, adapter concepts, and overhang considerations.
 					</figcaption>
 				</figure>
+				<figure
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col"
+				>
+					<img
+						src={equations.src}
+						width={1200}
+						height={800}
+						alt="SolidWorks equations table showing Rod_diameter global variable and linked sketch dimensions"
+						class="h-auto w-full object-contain p-4"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+						Global variable gets the rod diameter. Equations adjust the base and VESA adapter dimensions accordingly.
+					</figcaption>
+				</figure>
 			</div>
 
-			<aside class="space-y-8 lg:col-span-1">
+			<aside class="flex flex-col space-y-8 lg:col-span-1">
 				<div>
 					<p class={`m-0 ${eyebrow}`}>Key decisions</p>
-					<ul class="mt-6 space-y-4">
-						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+					<ul class="mt-6 space-y-4 flex flex-col">
+						<li class="flex-1 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
 							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Design for failure</h3>
 							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
 								Separating the VESA mount from the rod adapter lets damaged parts be replaced without
 								scrapping the whole assembly.
 							</p>
 						</li>
-						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+						<li class="flex-1 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
 							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Single-tool operation</h3>
 							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
 								Adjustments and locking are intended to use one tool end-to-end.
 							</p>
 						</li>
-						<li class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
+						<li class="flex-1 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 shadow-sm">
 							<h3 class="m-0 text-sm font-bold text-zinc-900 dark:text-zinc-50">Parametric adaptability</h3>
 							<p class="mb-0 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
 								Base and VESA adapter are driven by rod diameter so the design survives real-world
@@ -178,31 +195,13 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 						</li>
 					</ul>
 				</div>
-				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
-				>
-					<img
-						src={equations.src}
-						width={1200}
-						height={800}
-						alt="SolidWorks equations table showing Rod_diameter global variable and linked sketch dimensions"
-						class="h-auto w-full object-cover"
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
-						Global <code class="rounded bg-zinc-100 dark:bg-zinc-800/70 px-1.5 py-0.5 font-mono text-xs"
-							>Rod_diameter</code
-						> drives adapter clearance (example: 1.25 in → 31.75 mm).
-					</figcaption>
-				</figure>
 			</aside>
 		</div>
 	</section>
 
 	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
 		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor stand</p>
 			<h2 class={sectionTitle}>Assembly instructions</h2>
 			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
 
@@ -235,16 +234,12 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 					))
 				}
 			</ol>
-			<p class="mt-8 text-center text-xs text-zinc-400 dark:text-zinc-500 xl:hidden">
-				On small screens, steps read top to bottom; on a large display they match the original
-				left-to-right sequence.
-			</p>
 		</div>
 	</section>
 
 	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
 		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-			<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
+			<p class={`m-0 ${eyebrow}`}>1.1 Monitor stand</p>
 			<h2 class={sectionTitle}>Dimensions &amp; bill of materials</h2>
 			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
 
