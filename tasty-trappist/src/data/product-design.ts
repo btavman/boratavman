@@ -41,6 +41,13 @@ export const productDesignProjects = [
     description: "Small lamp using a recycled light bulb as a diffuser.",
     tags: "Electronics · 3D Printing · Product Design",
   },
+  {
+    id: "1.7",
+    slug: "egg-jig",
+    title: "Egg Jig",
+    description: "Conveyor egg-handling jig with controlled clamping and passive actuation.",
+    tags: "Mechanical Design · Product Design · Automation",
+  },
 ] as const;
 
 export type ProductDesignProject = (typeof productDesignProjects)[number];

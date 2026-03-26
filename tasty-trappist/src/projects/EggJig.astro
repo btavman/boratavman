@@ -1,0 +1,298 @@
+---
+import jigAssembly from '../assets/egg-jig/jig.png';
+import eggWithCaliper from '../assets/egg-jig/egg-with-caliper.png';
+import eggContour from '../assets/egg-jig/egg-contour.png';
+import eggJigRender from '../assets/egg-jig/egg-jig-render.png';
+import jigHalfOpened from '../assets/egg-jig/jig-half-opened.png';
+import jigFullyOpened from '../assets/egg-jig/jig-fully-opened.png';
+import jimage from '../assets/egg-jig/jimage.png';
+
+const shell =
+	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const sectionTitle = 'text-3xl font-bold tracking-tight sm:text-4xl';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 text-right ${eyebrow}`}>1.7 Egg Jig</p>
+		</div>
+	</header>
+
+	<!-- Hero / Project Context -->
+	<section class="mx-auto max-w-6xl px-6 pt-12 pb-10 sm:pt-16 sm:pb-12">
+		<p class={`m-0 ${eyebrow}`}>Project Context</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+			Egg Jig
+		</h1>
+		<hr class="mt-6 max-w-2xl border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-12 grid grid-cols-1 items-end gap-12 lg:grid-cols-2 lg:gap-16">
+			<div class="space-y-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+				<p>
+					This jig was designed as part of my capstone project, built for an industry client. A signed
+					NDA prevents disclosure of the machine's full function. With professor approval, the mechanical
+					subsystems I personally designed are presented here.
+				</p>
+				<p>
+					For context, the system can be thought of as a 3-metre-long conveyor that carries eggs through a
+					series of operations. The jig is the core carrier unit — it grips each egg individually and travels
+					with it along the line.
+				</p>
+
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>My role</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						Responsible for all mechanical design, from initial concept sketches to final part geometry.
+					</p>
+				</div>
+			</div>
+
+			<figure
+				class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+			>
+				<img
+					src={eggJigRender.src}
+					width={1200}
+					height={900}
+					alt="Egg jig assembly render"
+					class="h-auto w-full object-cover"
+					loading="eager"
+					decoding="async"
+				/>
+				<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+					Jig assembly render.
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<!-- Egg Characterisation -->
+	<section class="mx-auto max-w-6xl px-6 pb-20 sm:pb-24">
+		<h2 class={`${sectionTitle}`}>Egg Characterisation</h2>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<p class="mt-4 max-w-3xl text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+			Before defining any geometry, we needed to characterise what we were designing around. A caliper
+			placed beside each egg served as a scale reference. By measuring the known caliper dimension in pixels,
+			I established the mm-per-pixel ratio and used it to measure egg length and width in ImageJ.
+		</p>
+
+		<div class="mt-10 space-y-10">
+			<!-- Step 1: Caliper as Scale -->
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>01 Scale Reference</p>
+					<h3 class="m-0 mt-4 text-lg font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						Caliper as Scale
+					</h3>
+					<p class="mb-0 mt-3 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						Caliper set to a known dimension placed beside each egg. Establishes mm-per-pixel ratio for the photo.
+					</p>
+				</div>
+				<figure class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+					<img src={eggWithCaliper.src} class="h-auto w-full max-h-80 object-contain" />
+				</figure>
+			</div>
+
+			<!-- Step 2: ImageJ Profile -->
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>02 Contour Analysis</p>
+					<h3 class="m-0 mt-4 text-lg font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						ImageJ Profile
+					</h3>
+					<p class="mb-0 mt-3 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						The egg contour is determined by manipulating the image in the software. Pixel ratio applied to extract length and width.
+					</p>
+				</div>
+				<figure class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+					<img src={eggContour.src} class="h-auto w-full max-h-80 object-contain" />
+				</figure>
+			</div>
+
+			<!-- Step 3: Jig Geometry -->
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>03 Parameterisation</p>
+					<h3 class="m-0 mt-4 text-lg font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						Jig Geometry
+					</h3>
+					<p class="mb-0 mt-3 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+						The length and width of the egg is determined. This experiment is repeated for 12 eggs. With these dimensions, jig dimensions are adjusted.
+					</p>
+				</div>
+				<figure class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+					<img src={jimage.src} class="h-auto w-full max-h-80 object-contain" />
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<!-- Design Challenges -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<h2 class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">Design Challenges</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Challenge 1</p>
+					<h3 class="m-0 mt-4 text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						Egg Fragility
+					</h3>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						The jig must hold each egg firmly enough to prevent movement during transport, without generating a
+						clamping force that could crush the shell.
+					</p>
+					<p class="mb-0 mt-3 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						The eggshell failure load was determined analytically and set the upper bound for all jaw and spring
+						design decisions.
+					</p>
+				</div>
+
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Challenge 2</p>
+					<h3 class="m-0 mt-4 text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						Food Safety
+					</h3>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						The design must comply with food-grade regulations. This required a hollow bottom panel and a fully open-frame
+						structure so the jig can be cleaned thoroughly between production runs — with no internal cavities where residue could accumulate.
+					</p>
+				</div>
+
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Challenge 3</p>
+					<h3 class="m-0 mt-4 text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50">
+						Passive Actuation
+					</h3>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						The jaws must open and close automatically as the jig travels the conveyor — with no powered actuator
+						mounted on the jig itself. The mechanism must be entirely passive, reliable, and low-friction over millions of
+						cycles.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Jig Assembly -->
+	<section class="mx-auto max-w-6xl px-6 pb-20 sm:pb-24 pt-16 sm:pt-20">
+		<h2 class={`${sectionTitle}`}>Jig Assembly</h2>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+		<div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+			<div class="space-y-5 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+				<p class={`m-0 ${eyebrow}`}>How it works</p>
+
+				<p>
+					Eggs are delivered to the jig by falling from above. The ring at the bottom is designed to absorb this impact,
+					preventing shell fracture on arrival.
+				</p>
+				<p>
+					Once clamped, the egg is centred in the lower ring while the jaws maintain a controlled force from both sides.
+					Both jaws default to closed via springs, each anchored to the base plate with a shoulder bolt.
+				</p>
+				<p>
+					The base has an open-frame, hollow-bottom design to accommodate a downstream operation (undisclosed per NDA)
+					and to allow thorough cleaning between runs.
+				</p>
+				<p>
+					The full assembly mounts to the conveyor chain through four food-safe bolts. Jaw opening is passive,
+					a follower track on the frame contacts bearings on the jaw shafts, acting as cam followers.
+				</p>
+			</div>
+
+			<img
+				src={jigAssembly.src}
+				width={1200}
+				height={900}
+				alt="Jig assembly — annotated view"
+				class="h-auto w-full rounded-2xl object-cover"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+	</section>
+
+	<!-- Operating States -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<h2 class="m-0 text-3xl font-bold tracking-tight sm:text-4xl">Operating States</h2>
+			<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+			<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Default — Closed</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						Jaws held shut by spring force.
+					</p>
+				</div>
+
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Half Open</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						As conveyor moves, follower track opens the jaws.
+					</p>
+				</div>
+
+				<div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 shadow-sm">
+					<p class={`m-0 ${eyebrow}`}>Fully Open</p>
+					<p class="mb-0 mt-4 text-base leading-relaxed text-zinc-800 dark:text-zinc-200">
+						Jaws fully retracted. Egg can be received from the orientation conveyor or released.
+					</p>
+				</div>
+			</div>
+
+			<div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+				<figure
+					class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={jigHalfOpened.src}
+						width={1200}
+						height={900}
+						alt="Jig in half open state"
+						class="h-auto w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+				</figure>
+
+				<figure
+					class="m-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm"
+				>
+					<img
+						src={jigFullyOpened.src}
+						width={1200}
+						height={900}
+						alt="Jig in fully open state"
+						class="h-auto w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400">
+			<span>Bora Tavman — Egg Jig</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

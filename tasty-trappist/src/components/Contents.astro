@@ -1,8 +1,9 @@
 ---
 import { productDesignProjects as projects } from '../data/product-design';
 
-const leftCol = projects.slice(0, 3);
-const rightCol = projects.slice(3, 6);
+const mid = Math.ceil(projects.length / 2);
+const leftCol = projects.slice(0, mid);
+const rightCol = projects.slice(mid);
 
 const shell =
 	"box-border flex min-h-dvh flex-col bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-black dark:text-zinc-50 **:box-border";
