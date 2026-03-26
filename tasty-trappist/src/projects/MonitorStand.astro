@@ -56,7 +56,7 @@ const briefPoints = [
 ] as const;
 
 const shell =
-	"min-h-dvh bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+	"min-h-dvh w-full bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
 const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
 const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 ---
@@ -113,7 +113,6 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 	</section>
 
 	<section class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-		<p class={`m-0 ${eyebrow}`}>1.1 Monitor arm</p>
 		<h2 class={sectionTitle}>Design process</h2>
 		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
 
@@ -134,15 +133,15 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 					</p>
 				</div>
 				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col"
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col max-h-96"
 				>
-					<div class="flex items-center justify-center p-4">
+					<div class="flex items-center justify-center p-4 flex-1 min-h-0">
 						<img
 							src={reinforcing.src}
 							width={1200}
 							height={800}
 							alt="Hand-drawn concept sketch: base with reinforcing ribs, rod, adapter versions, overhang notes"
-							class="h-auto max-w-md object-contain -rotate-90"
+							class="h-auto max-h-full object-contain"
 							loading="lazy"
 							decoding="async"
 						/>
@@ -152,7 +151,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 					</figcaption>
 				</figure>
 				<figure
-					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col"
+					class="m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm flex flex-col max-h-96"
 				>
 					<img
 						src={equations.src}
