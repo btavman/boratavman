@@ -1,0 +1,266 @@
+---
+import hero1 from '../assets/home-bar/hero1.png';
+import hero2 from '../assets/home-bar/hero2.png';
+import apartmentLayout from '../assets/home-bar/layout.png';
+import solidworks from '../assets/home-bar/bar_sw.png';
+import build1 from '../assets/home-bar/built1.PNG';
+import build2 from '../assets/home-bar/built2.PNG';
+import build3 from '../assets/home-bar/built3.PNG';
+import build4 from '../assets/home-bar/built4.PNG';
+import build5 from '../assets/home-bar/built5.PNG';
+import build6 from '../assets/home-bar/built6.PNG';
+import build7 from '../assets/home-bar/built7.PNG';
+import assembly1 from '../assets/home-bar/assembly1.PNG';
+import assembly2 from '../assets/home-bar/assembly2.PNG';
+import assembly3 from '../assets/home-bar/assembly3.PNG';
+import assembly4 from '../assets/home-bar/assembly4.PNG';
+import assembly5 from '../assets/home-bar/assembly5.PNG';
+
+const cuttingSteps = [
+	{ n: 1, image: build1.src, caption: 'Rounding the corners.' },
+	{ n: 2, image: build2.src, caption: 'Cutting the pieces to size.' },
+	{ n: 3, image: build3.src, caption: 'Sanding the wood.' },
+] as const;
+
+const gluingSteps = [
+	{ n: 4, image: build4.src, caption: 'Layout for the joint.' },
+	{ n: 5, image: build5.src, caption: 'Drilling holes for dowels.' },
+	{ n: 6, image: build6.src, caption: 'Inserted dowels.' },
+	{ n: 7, image: build7.src, caption: 'Glued pieces with a bracket added for extra support.' },
+] as const;
+
+const assemblySteps = [
+	{ n: 1, image: assembly1.src, caption: 'Base in place.' },
+	{ n: 2, image: assembly2.src, caption: 'First section and wine fridge placed.' },
+	{ n: 3, image: assembly3.src, caption: 'Two poles and the shelf placed.' },
+	{ n: 4, image: assembly4.src, caption: 'Bar surface placed.' },
+	{ n: 5, image: assembly5.src, caption: 'Top section placed.' },
+] as const;
+
+const shell =
+	"min-h-dvh w-full bg-white dark:bg-zinc-950 font-[system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI','Helvetica_Neue',Arial,sans-serif] text-zinc-900 dark:text-zinc-50 **:box-border";
+const eyebrow = 'text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-zinc-400 dark:text-zinc-500';
+const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
+---
+
+<div class={shell}>
+	<header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm">
+		<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+			<a
+				href="/product-design"
+				class="text-sm text-zinc-500 transition-colors duration-200 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+			>
+				← Product design
+			</a>
+			<p class={`m-0 ${eyebrow}`}>1.8 Home bar</p>
+		</div>
+	</header>
+
+	<!-- Title -->
+	<section class="mx-auto max-w-6xl px-6 pt-14 pb-10 sm:pt-16 sm:pb-12">
+		<p class={`m-0 ${eyebrow}`}>1.8 Home bar</p>
+		<h1 class="m-0 mt-2 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+			Home Bar
+		</h1>
+		<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+	</section>
+
+	<!-- Hero: two side-by-side shots -->
+	<section class="w-full border-b border-zinc-200 dark:border-zinc-800">
+		<div class="grid grid-cols-2 max-w-[60%] mx-auto">
+			<figure class="m-0 overflow-hidden border-r border-zinc-200 dark:border-zinc-800">
+				<img
+					src={hero1.src}
+					width={1200}
+					height={800}
+					alt="Home bar — side A"
+					class="h-auto w-full object-contain"
+					loading="eager"
+					decoding="async"
+				/>
+			</figure>
+			<figure class="m-0 overflow-hidden">
+				<img
+					src={hero2.src}
+					width={1200}
+					height={800}
+					alt="Home bar — side B"
+					class="h-auto w-full object-contain"
+					loading="eager"
+					decoding="async"
+				/>
+			</figure>
+		</div>
+	</section>
+
+	<!-- Design & Planning -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid gap-10 lg:grid-cols-12">
+				<div class="lg:col-span-2">
+					<p class={`m-0 sticky top-8 ${eyebrow}`}>Design &amp; planning</p>
+				</div>
+				<div class="lg:col-span-10">
+					<h2 class={`m-0 ${sectionTitle}`}>Decisions before the first cut</h2>
+					<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+					<!-- Apartment layout -->
+					<figure class="mt-10 m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+						<img
+							src={apartmentLayout.src}
+							width={1200}
+							height={800}
+							alt="Apartment floor plan showing the bar's position along the living-room wall"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+							Apartment layout
+						</figcaption>
+					</figure>
+
+					<!-- SolidWorks design -->
+					<figure class="mt-6 m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+						<img
+							src={solidworks.src}
+							width={1200}
+							height={800}
+							alt="SolidWorks model showing bar dimensions, shelf layout, and joinery details"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+						<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm text-zinc-500 dark:text-zinc-400">
+							SolidWorks model
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- The Build: Cutting & Sanding -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid gap-10 lg:grid-cols-12">
+				<div class="lg:col-span-2">
+					<p class={`m-0 sticky top-8 ${eyebrow}`}>The build</p>
+				</div>
+				<div class="lg:col-span-10">
+					<h2 class={`m-0 ${sectionTitle}`}>Cutting &amp; sanding</h2>
+					<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+					<div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+						{cuttingSteps.map((step) => (
+							<figure class="m-0 flex flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+								<img
+									src={step.image}
+									width={1200}
+									height={800}
+									alt={`Cutting and sanding — step ${step.n}`}
+									class="h-56 w-full object-cover sm:h-64"
+									loading="lazy"
+									decoding="async"
+								/>
+								<figcaption class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3">
+									<p class="mb-0 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+										{step.caption}
+									</p>
+								</figcaption>
+							</figure>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- The Build: Gluing -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid gap-10 lg:grid-cols-12">
+				<div class="lg:col-span-2">
+					<p class={`m-0 sticky top-8 ${eyebrow}`}>The build</p>
+				</div>
+				<div class="lg:col-span-10">
+					<h2 class={`m-0 ${sectionTitle}`}>Gluing pieces together</h2>
+					<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+					<div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+						{gluingSteps.map((step) => (
+							<figure class="m-0 flex flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+								<img
+									src={step.image}
+									width={1200}
+									height={800}
+									alt={`Gluing — step ${step.n}`}
+									class="h-56 w-full object-cover"
+									loading="lazy"
+									decoding="async"
+								/>
+								<figcaption class="flex flex-1 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3">
+									<p class="mb-0 mt-1 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+										{step.caption}
+									</p>
+								</figcaption>
+							</figure>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Assembly -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid gap-10 lg:grid-cols-12">
+				<div class="lg:col-span-2">
+					<p class={`m-0 sticky top-8 ${eyebrow}`}>Assembly</p>
+				</div>
+				<div class="lg:col-span-10">
+					<h2 class={`m-0 ${sectionTitle}`}>Putting it together</h2>
+					<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+
+					<ol class="mt-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 xl:grid-cols-5 xl:gap-4">
+						{assemblySteps.map((step) => (
+							<li class="flex flex-col">
+								<figure class="m-0 flex flex-1 flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+									<div class="flex items-center justify-center bg-zinc-100 dark:bg-zinc-800/70 h-52">
+										<img
+											src={step.image}
+											width={1200}
+											height={800}
+											alt={`Assembly step ${step.n}`}
+											class="h-full w-full object-contain p-3"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<figcaption class="flex flex-1 flex-col border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4">
+										<p class="mb-0 mt-2 text-sm leading-snug text-zinc-800 dark:text-zinc-200">
+											{step.caption}
+										</p>
+									</figcaption>
+								</figure>
+							</li>
+						))}
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+		<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-500 dark:text-zinc-400">
+			<span>Bora Tavman — Home bar</span>
+			<a
+				href="/product-design"
+				class="text-zinc-900 dark:text-zinc-50 underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:hover:decoration-zinc-300"
+			>
+				Back to contents
+			</a>
+		</div>
+	</footer>
+</div>

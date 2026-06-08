@@ -48,6 +48,13 @@ export const productDesignProjects = [
     description: "Conveyor egg-handling jig with controlled clamping and passive actuation.",
     tags: "Mechanical Design · Product Design · Automation",
   },
+  {
+    id: "1.8",
+    slug: "home-bar",
+    title: "Home Bar",
+    description: "Handbuilt home bar for Bar Babuş — the cocktail night operation.",
+    tags: "Woodworking · Furniture Design · Bar Babuş",
+  },
 ] as const;
 
 export type ProductDesignProject = (typeof productDesignProjects)[number];
