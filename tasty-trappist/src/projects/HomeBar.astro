@@ -1,4 +1,5 @@
 ---
+import barElectric from '../assets/home-bar/bar_electric.png';
 import hero1 from '../assets/home-bar/hero1.jpg';
 import hero2 from '../assets/home-bar/hero2.jpg';
 import apartmentLayout from '../assets/home-bar/layout.png';
@@ -67,7 +68,7 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 
 	<!-- Hero: two side-by-side shots -->
 	<section class="w-full border-b border-zinc-200 dark:border-zinc-800">
-		<div class="grid grid-cols-2 max-w-[60%] mx-auto">
+		<div class="grid grid-cols-2 max-w-[70%] lg:max-w-[60%] mx-auto">
 			<figure class="m-0 overflow-hidden border-r border-zinc-200 dark:border-zinc-800">
 				<img
 					src={hero1.src}
@@ -247,6 +248,32 @@ const sectionTitle = 'mt-2 text-3xl font-bold tracking-tight sm:text-4xl';
 							</li>
 						))}
 					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Electrical -->
+	<section class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+		<div class="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+			<div class="grid gap-10 lg:grid-cols-12">
+				<div class="lg:col-span-2">
+					<p class={`m-0 sticky top-8 ${eyebrow}`}>Electrical</p>
+				</div>
+				<div class="lg:col-span-10">
+					<h2 class={`m-0 ${sectionTitle}`}>Wiring the bar</h2>
+					<hr class="mt-6 border-0 border-t border-zinc-200 dark:border-zinc-800" />
+					<figure class="mt-10 m-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800/70 shadow-sm">
+						<img
+							src={barElectric.src}
+							width={1200}
+							height={800}
+							alt="Electrical wiring inside the bar"
+							class="h-auto w-full object-contain"
+							loading="lazy"
+							decoding="async"
+						/>
+					</figure>
 				</div>
 			</div>
 		</div>

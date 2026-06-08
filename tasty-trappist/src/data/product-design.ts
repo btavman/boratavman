@@ -52,8 +52,8 @@ export const productDesignProjects = [
     id: "1.8",
     slug: "home-bar",
     title: "Home Bar",
-    description: "Handbuilt home bar for Bar Babuş — the cocktail night operation.",
-    tags: "Woodworking · Furniture Design · Bar Babuş",
+    description: "Handbuilt home bar.",
+    tags: "Woodworking · Furniture Design · Final Product",
   },
 ] as const;
 
