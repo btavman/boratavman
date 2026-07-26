@@ -4,7 +4,14 @@
       "Bash(dir tasty-trappistsrcassetsdrawer-divider )",
       "Bash(dir tasty-trappistsrcassetsivy-pot )",
       "Bash(dir tasty-trappistsrcassetslight-bulb )",
-      "Bash(dir tasty-trappistsrcassetsmonitor-stand)"
+      "Bash(dir tasty-trappistsrcassetsmonitor-stand)",
+      "Bash(git ls-tree *)",
+      "Bash(grep -v \"^$\")",
+      "Bash(git checkout *)",
+      "Bash(git rm *)",
+      "Bash(rm \"tasty-trappist/wrangler.jsonc\" \"tasty-trappist/public/.assetsignore\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ],
     "deny": [],
     "ask": []
